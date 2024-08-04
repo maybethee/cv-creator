@@ -1,0 +1,16 @@
+.label {
+  font-weight: bold;
+}
+
+.label,
+.input {
+  margin: 1rem 0;
+}
+
+.input {
+  margin-left: 0.2rem;
+}
+
+hr {
+  width: 85%;
+}

@@ -1,0 +1,69 @@
+.cv-wrapper {
+  padding: 3rem 3rem 2rem 3rem;
+  border: solid 2px black;
+  border-radius: 12px;
+}
+
+.submit-btn {
+  margin-top: 1rem;
+}
+
+.gen-info,
+.education,
+.work {
+  border: solid 1px black;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.generated-values ul {
+  width: 60vw;
+  border: solid 3px black;
+  border-radius: 12px;
+  list-style-type: none;
+  padding-left: 0;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.generated-values ul li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.key-label {
+  font-weight: bold;
+}
+
+.generated-values ul li:nth-child(3),
+.generated-values ul li:nth-child(6) {
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid gray;
+}
+
+.generated-values ul li:last-child {
+  margin-bottom: 1rem;
+}
+
+.generated-values ul li:nth-child(1)::before,
+.generated-values ul li:nth-child(4)::before,
+.generated-values ul li:nth-child(7)::before {
+  font-size: 1.1rem;
+  display: block;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: left;
+  margin: 1rem;
+}
+
+.generated-values ul li:nth-child(1)::before {
+  content: "General Info:";
+}
+
+.generated-values ul li:nth-child(4)::before {
+  content: "Education:";
+}
+
+.generated-values ul li:nth-child(7)::before {
+  content: "Work Experience:";
+}

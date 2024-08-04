@@ -1,0 +1,32 @@
+.label {
+  font-weight: bold;
+}
+
+.label,
+.input {
+  margin: 1rem 0;
+}
+
+.input,
+.textarea {
+  margin-left: 0.2rem;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.textarea {
+  margin: 0.5rem 0;
+  resize: none;
+  margin-left: 0.6rem;
+}
+
+.container .label {
+  margin-top: 0.5rem;
+}
+
+hr {
+  width: 85%;
+}

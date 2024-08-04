@@ -2,6 +2,7 @@ import { useState } from "react";
 import GenInfo from "./GenInfo";
 import Education from "./Education";
 import Work from "./Work";
+import "./../styles/application-wrapper.css";
 
 function ApplicationWrapper() {
   const [state, setState] = useState({
@@ -33,13 +34,6 @@ function ApplicationWrapper() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // console.log(state);
-
-    // const generatedDiv = document.querySelector(".generated-values");
-
-    // generatedDiv.textContent = "";
-
-    // setSubmittedValues((oldValues) => [...oldValues, state]);
     setSubmittedValues([state]);
 
     setIsEditing(false);
@@ -55,45 +49,19 @@ function ApplicationWrapper() {
       {isEditing ? (
         <form onSubmit={handleSubmit}>
           <div className="page-wrapper">
-            <div
-              className="cv-wrapper"
-              style={{
-                padding: "3rem",
-                border: "solid 2px black",
-                borderRadius: "12px",
-              }}
-            >
-              <section
-                className="gen-info"
-                style={{
-                  border: "solid 1px black",
-                  padding: "2rem",
-                  marginBottom: "1rem",
-                }}
-              >
+            <div className="cv-wrapper">
+              <section className="gen-info">
                 <GenInfo state={state} handleChange={handleChange} />
               </section>
-              <section
-                className="education"
-                style={{
-                  border: "solid 1px black",
-                  padding: "2rem",
-                  marginBottom: "1rem",
-                }}
-              >
+              <section className="education">
                 <Education state={state} handleChange={handleChange} />
               </section>
-              <section
-                className="work"
-                style={{
-                  border: "solid 1px black",
-                  padding: "2rem",
-                  marginBottom: "1rem",
-                }}
-              >
+              <section className="work">
                 <Work state={state} handleChange={handleChange} />
               </section>
-              <button type="submit">Submit</button>
+              <button type="submit" className="submit-btn">
+                Submit
+              </button>
             </div>
           </div>
         </form>
@@ -103,13 +71,16 @@ function ApplicationWrapper() {
 
           <div className="generated-values">
             {submittedValues.map((values, i) => (
-              <div key={i}>
+              <ul key={i}>
                 {Object.entries(values).map(([key, value]) => (
-                  <p key={key}>
-                    {key.charAt(0).toUpperCase() + key.slice(1)}: {value}
-                  </p>
+                  <li key={key}>
+                    <span className="key-label">
+                      {key.charAt(0).toUpperCase() + key.slice(1)}
+                    </span>
+                    : {value}
+                  </li>
                 ))}
-              </div>
+              </ul>
             ))}
           </div>
         </div>
